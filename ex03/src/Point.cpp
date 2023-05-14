@@ -1,14 +1,16 @@
-#include "Point.hpp"
+#include "../include/Fixed.hpp"
+#include "../include/Point.hpp"
+
 
 Point::Point() : _x(0), _y(0) {}
 
 Point::Point(float const x, float const y) : _x(x), _y(y) {}
 
-Point::Point(Point const& src) : _x(src.getX()), _y(src.getY()) {}
+Point::Point(Point const &src) : _x(src.getX()), _y(src.getY()) {}
 
 Point::~Point() {}
 
-Point& Point::operator=(Point const& rhs) {
+Point &Point::operator=(Point const &rhs) {
     // Check for self-assignment
     if (this == &rhs) {
         return *this;
@@ -30,3 +32,13 @@ Fixed const Point::getX() const {
 Fixed const Point::getY() const {
     return _y;
 }
+
+
+
+// public:
+//     Fixed();
+//     Fixed(Fixed const &fixed);
+//     Fixed &operator=(Fixed const &fixed); // Mark the assignment operator as const
+//     // ...
+// private:
+//     int _value;
